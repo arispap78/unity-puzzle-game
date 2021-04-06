@@ -12,16 +12,21 @@ public class PlacementArea : MonoBehaviour
         foreach (Transform tr in transform) 
         {
             myPieces.Add(tr.gameObject);
-            tempColor=tr.gameObject.GetComponent<Renderer>().material.color;
-            tempColor.a = 0f;
-            tr.gameObject.GetComponent<Renderer>().material.color = tempColor;
-
+            transparent(tr.gameObject);
         }
     }
+
+    void transparent(GameObject piece)
+    {
+        tempColor = piece.GetComponent<Renderer>().material.color;
+        tempColor.a = 0f;
+        piece.GetComponent<Renderer>().material.color = tempColor;
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
 }
