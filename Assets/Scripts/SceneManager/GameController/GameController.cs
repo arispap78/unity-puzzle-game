@@ -14,13 +14,14 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         activeAreas = FindObjectsOfType<PlacementArea>();
-        getPiecename();
-        match();
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        getPiecename();
+        match();
         Console.Write($"areas: {activeAreas.Length}");
         //Console.Write($"name: {children[choice]}");
 
@@ -50,7 +51,7 @@ public class GameController : MonoBehaviour
     void makeVisible(GameObject piece)
     {
         Color tempColor = piece.GetComponent<Renderer>().material.color;
-        tempColor.a = 255f;
+        tempColor.a = 1f;
         piece.GetComponent<Renderer>().material.color = tempColor;
     }
 }
