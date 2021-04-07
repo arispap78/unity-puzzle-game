@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     {
         getPiecename();
         match();
-        Console.Write($"areas: {activeAreas.Length}");
+        Debug.Log($"areas: {activeAreas.Length}");
         //Console.Write($"name: {children[choice]}");
 
     }
