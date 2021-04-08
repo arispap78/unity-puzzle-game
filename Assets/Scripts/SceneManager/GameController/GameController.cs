@@ -14,37 +14,37 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         activeAreas = FindObjectsOfType<PlacementArea>();
-        
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        getPiecename();
-        match();
+        GetPiecename();
+        Match();
         Debug.Log($"areas: {activeAreas.Length}");
         //Console.Write($"name: {children[choice]}");
 
     }
 
-    void getPiecename()
+    void GetPiecename()
     {
         var rand = new System.Random();
         choice = rand.Next(children.Length);
         visiblePiece = children[choice];
     }
 
-    void match()
+    void Match()
     {
         foreach (PlacementArea area in activeAreas)
         {
             if (area.name.Equals("Central"))
             {
-                foreach (GameObject fit in area.myPieces) 
+                foreach (GameObject fit in area.myPieces)
                 {
-                    if(fit.name== visiblePiece)
+                    if (fit.name == visiblePiece)
                         makeVisible(fit);
-                }  
+                }
             }
         }
     }
